@@ -1,0 +1,186 @@
+---
+title: 'Portal de Clientes Multibackend'
+description: 'Portal web para clientes con autenticación y dashboard personalizado con arquitectura de microservicios'
+phase: 2
+period: 'Meses 4-6'
+level: 'Intermedio'
+technologies: ['Java/Spring', '.NET Core', 'Angular Material', 'API Gateway', 'Docker']
+coverImage: 'https://images.unsplash.com/photo-1729938660612-87daeb4d3b63'
+layout: '../../layouts/ProjectLayout.astro'
+---
+
+import ProjectDetails from '../../components/ProjectDetails.astro';
+
+# Portal de Clientes Multibackend
+
+## Resumen del Proyecto
+
+Este proyecto implementa un portal web completo para clientes, integrando múltiples backends y tecnologías aprendidas durante la segunda fase. La aplicación combina microservicios en Java/Spring y .NET Core unidos mediante un API Gateway, y presenta un frontend moderno en Angular con Material Design y gráficos interactivos, todo ello contenerizado con Docker.
+
+## Objetivos de Aprendizaje
+
+- Diseñar e implementar microservicios con diferentes tecnologías (.NET Core y Spring Boot)
+- Crear una capa de integración mediante API Gateway
+- Implementar autenticación y autorización en arquitecturas distribuidas
+- Desarrollar interfaces avanzadas con Angular Material y visualización de datos
+- Introducir contenedores Docker para estandarizar entornos de desarrollo y despliegue
+
+<ProjectDetails
+  title="Portal de Clientes Multibackend"
+  phase={2}
+  description="Portal web para clientes con autenticación y dashboard personalizado, implementado con arquitectura de microservicios Java y .NET, API Gateway y Docker."
+  functionalities={[
+    {
+      title: "Autenticación y Seguridad",
+      features: [
+        "Registro y login de clientes",
+        "Gestión de roles y permisos",
+        "Autenticación mediante JWT",
+        "Sesiones persistentes"
+      ]
+    },
+    {
+      title: "Catálogo de Productos",
+      features: [
+        "Visualización por categorías",
+        "Búsqueda y filtrado avanzado",
+        "Vista detallada de productos",
+        "Gestión de favoritos"
+      ]
+    },
+    {
+      title: "Gestión de Pedidos",
+      features: [
+        "Historial de pedidos realizados",
+        "Seguimiento de estado",
+        "Facturación electrónica",
+        "Exportación de reportes"
+      ]
+    },
+    {
+      title: "Dashboard Personalizado",
+      features: [
+        "Estadísticas de compras",
+        "Gráficos interactivos",
+        "Resumen de actividad reciente",
+        "Recomendaciones personalizadas"
+      ]
+    }
+  ]}
+  architecture={[
+    {
+      title: "Microservicio Java/Spring",
+      features: [
+        "Gestión de clientes",
+        "Catálogo de productos",
+        "Gestión de pedidos",
+        "Recomendaciones"
+      ]
+    },
+    {
+      title: "Microservicio .NET Core",
+      features: [
+        "Sistema de facturación",
+        "Generación de reportes",
+        "Análisis de ventas",
+        "Exportación de datos"
+      ]
+    },
+    {
+      title: "API Gateway",
+      features: [
+        "Enrutamiento de peticiones",
+        "Balance de carga",
+        "Agregación de respuestas",
+        "Gestión de autenticación"
+      ]
+    },
+    {
+      title: "Frontend Angular",
+      features: [
+        "Angular Material UI",
+        "Gestión de estado con NgRx",
+        "Gráficos interactivos",
+        "Formularios reactivos"
+      ]
+    }
+  ]}
+  challenges={[
+    "Integración de microservicios desarrollados en diferentes tecnologías (.NET y Java)",
+    "Implementación de comunicación eficiente entre servicios mediante API Gateway",
+    "Manejo de estado consistente en aplicación Angular con múltiples fuentes de datos",
+    "Diseño de interfaz responsiva con experiencia fluida en componentes Material",
+    "Contenerización de todos los componentes manteniendo la comunicación efectiva",
+    "Implementación de autenticación centralizada para microservicios distribuidos"
+  ]}
+  screenshots={[
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Dashboard Cliente"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Catálogo de Productos"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Historial de Pedidos"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Detalle de Facturación"
+    }
+  ]}
+  knowledge={[
+    {
+      area: ".NET Core y C#",
+      skills: [
+        "Desarrollo API RESTful con ASP.NET Core",
+        "ORM con Entity Framework Core",
+        "Inyección de dependencias nativa",
+        "Middlewares y filtros personalizados"
+      ]
+    },
+    {
+      area: "Arquitectura API",
+      skills: [
+        "Diseño de recursos y endpoints RESTful",
+        "Versionado de APIs",
+        "Documentación con Swagger/OpenAPI",
+        "Patrones de integración con API Gateway"
+      ]
+    },
+    {
+      area: "Angular Avanzado",
+      skills: [
+        "Gestión de estado con NgRx/Store",
+        "Programación reactiva con RxJS",
+        "Componentes avanzados de Angular Material",
+        "Interceptores HTTP y Guards"
+      ]
+    },
+    {
+      area: "Docker",
+      skills: [
+        "Creación de imágenes personalizadas",
+        "Definición de servicios con Docker Compose",
+        "Gestión de redes entre contenedores",
+        "Volumenes para persistencia de datos"
+      ]
+    }
+  ]}
+  nextSteps={[
+    "Implementación de seguridad avanzada con OAuth 2.0 en la Fase 3",
+    "Orquestación de contenedores con Rancher para gestión y escalado",
+    "Incorporación de monitorización y logging centralizado para microservicios",
+    "Implementación de patrones de resiliencia (Circuit Breaker, Retry, Fallback)"
+  ]}
+  deliverables={[
+    "Repositorio Git organizado con estructura de microservicios",
+    "Documentación técnica con diagramas de arquitectura",
+    "Especificación OpenAPI (Swagger) para todas las APIs",
+    "Colecciones Postman para pruebas de integración",
+    "Docker Compose para despliegue completo",
+    "Manual de usuario para el portal de clientes"
+  ]}
+/>

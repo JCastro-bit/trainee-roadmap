@@ -2,13 +2,90 @@
 // src/pages/learning-path.astro
 import MainLayout from '../layouts/MainLayout.astro';
 import LearningPathEmpresarial from '../components/learning-path-empresa';
+
+// Datos de proyectos para enlaces directos
+const projects = [
+  {
+    title: "Sistema de Gestión de Inventario",
+    phase: 1,
+    color: "#3182CE",
+    slug: "sistema-gestion-inventario"
+  },
+  {
+    title: "Portal de Clientes Multibackend",
+    phase: 2,
+    color: "#38A169",
+    slug: "portal-clientes-multibackend"
+  },
+  {
+    title: "Sistema de Gestión de Tickets Seguro",
+    phase: 3,
+    color: "#805AD5",
+    slug: "sistema-tickets-seguro"
+  },
+  {
+    title: "Plataforma Empresarial Integrada",
+    phase: 4,
+    color: "#DD6B20",
+    slug: "plataforma-empresarial"
+  }
+];
 ---
 
 <MainLayout 
   title="Plan de Desarrollo Full Stack Empresarial" 
   description="Plan de desarrollo profesional enfocado en tecnologías empresariales"
 >
-  <section class="bg-white rounded-lg shadow-md p-6">
-    <LearningPathEmpresarial client:load />
+  <!-- Links to Projects -->
+  <div class="max-w-6xl mx-auto px-4 my-8">
+    <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Proyectos Integradores</h2>
+      <p class="text-gray-600 mb-6">
+        Accede directamente a los proyectos prácticos de cada fase del plan de desarrollo:
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {projects.map(project => (
+          <a 
+            href={`/projects/${project.slug}`}
+            class="flex items-center p-4 rounded-lg transition-all hover:shadow-md"
+            style={`border-left: 4px solid ${project.color}; background-color: ${project.color}10;`}
+          >
+            <div 
+              class="w-10 h-10 rounded-full flex items-center justify-center mr-3 font-bold"
+              style={`background-color: ${project.color}; color: white;`}
+            >
+              {project.phase}
+            </div>
+            <div>
+              <p class="font-medium">{project.title}</p>
+              <p class="text-sm text-gray-500">Fase {project.phase}</p>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-auto" style={`color: ${project.color}`} viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        ))}
+      </div>
+      
+      <div class="mt-6 text-center">
+        <a 
+          href="/projects" 
+          class="inline-flex items-center px-4 py-2 bg-gray-100 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-200 transition-colors"
+        >
+          Ver todos los proyectos
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Learning Path Component -->
+  <section class="max-w-6xl mx-auto px-4 mb-8">
+    <div class="bg-white rounded-lg shadow-md p-6">
+      <LearningPathEmpresarial client:load />
+    </div>
   </section>
 </MainLayout>

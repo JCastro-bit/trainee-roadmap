@@ -1,0 +1,187 @@
+---
+// src/components/ProjectDetails.astro
+interface Feature {
+  title: string;
+  features: string[];
+}
+
+interface Screenshot {
+  src: string;
+  alt: string;
+}
+
+interface KnowledgeArea {
+  area: string;
+  skills: string[];
+}
+
+interface Props {
+  title: string;
+  phase: number;
+  description: string;
+  functionalities: Feature[];
+  architecture: Feature[];
+  challenges: string[];
+  screenshots: Screenshot[];
+  knowledge: KnowledgeArea[];
+  nextSteps: string[];
+  deliverables: string[];
+}
+
+const { 
+  title, 
+  phase, 
+  description,
+  functionalities,
+  architecture,
+  challenges,
+  screenshots,
+  knowledge,
+  nextSteps,
+  deliverables
+} = Astro.props;
+
+// Función para obtener el color según la fase
+const getPhaseColor = (phase: number) => {
+  const colors: { [key: number]: string } = {
+    1: "#3182CE", // azul
+    2: "#38A169", // verde
+    3: "#805AD5", // púrpura
+    4: "#DD6B20", // naranja
+  };
+  return colors[phase] || "#3182CE";
+};
+
+const phaseColor = getPhaseColor(phase);
+---
+
+<div class="mt-8 space-y-10">
+  <!-- Arquitectura Técnica -->
+  <div class="bg-blue-50 p-6 rounded-lg">
+    <h3 class="font-bold text-lg mb-4">Componentes del Sistema</h3>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {architecture.map((component) => (
+        <div class="bg-white p-4 rounded shadow-sm">
+          <h4 class="font-semibold text-blue-700 mb-2">{component.title}</h4>
+          <ul class="list-disc pl-5 space-y-1 text-sm">
+            {component.features.map((feature) => (
+              <li>{feature}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Funcionalidades Principales -->
+  <div>
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Funcionalidades Principales</h2>
+    
+    <div class="space-y-6">
+      {functionalities.map((func) => (
+        <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+          <h3 class="text-xl font-semibold mb-3" style={`color: ${phaseColor}`}>{func.title}</h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            {func.features.map((feature) => (
+              <li class="flex items-start">
+                <span class="text-green-500 mr-2">✓</span>
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Diagrama de la Arquitectura -->
+  <div>
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Diagrama de la Arquitectura</h2>
+    
+    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+      ```mermaid
+      graph TD
+          A[Cliente Web Angular] -->|HTTP/JSON| B(API REST Spring Boot)
+          B -->|JDBC| C[(Base de Datos MySQL)]
+          B -->|Consulta| D[JPA Repositories]
+          D -->|Mapeo| C
+          B -->|Lógica| E[Servicios]
+          E -->|Operaciones| D
+          B -->|Validación| F[DTO Validators]
+          G[Proceso Batch] -->|Sincronización| E
+      ```
+    </div>
+  </div>
+
+  <!-- Desafíos Técnicos -->
+  <div>
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Desafíos Técnicos</h2>
+    
+    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+      <ol class="space-y-3 list-decimal pl-5">
+        {challenges.map((challenge) => (
+          <li class="text-gray-700">{challenge}</li>
+        ))}
+      </ol>
+    </div>
+  </div>
+
+  <!-- Capturas de Pantalla -->
+  <div>
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Capturas de Pantalla</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      {screenshots.map((screenshot) => (
+        <img src={screenshot.src} alt={screenshot.alt} class="rounded-lg shadow" />
+      ))}
+    </div>
+  </div>
+
+  <!-- Conocimientos Aplicados -->
+  <div>
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Conocimientos Aplicados</h2>
+    
+    <div class="space-y-6">
+      {knowledge.map((area) => (
+        <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+          <h3 class="text-xl font-semibold mb-3" style={`color: ${phaseColor}`}>{area.area}</h3>
+          <ul class="list-disc pl-5 space-y-1">
+            {area.skills.map((skill) => (
+              <li>{skill}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Próximos Pasos -->
+  <div>
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Próximos Pasos</h2>
+    
+    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+      <p class="mb-3">Este proyecto sienta las bases para los desarrollos más avanzados de las siguientes fases:</p>
+      <ol class="list-decimal pl-5 space-y-2">
+        {nextSteps.map((step, index) => (
+          <li>
+            <span class="font-medium">{step}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+
+  <!-- Entregables del Proyecto -->
+  <div>
+    <h2 class="text-2xl font-bold text-gray-900 mb-4">Entregables del Proyecto</h2>
+    
+    <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100">
+      <ul class="list-disc pl-5 space-y-1">
+        {deliverables.map((deliverable) => (
+          <li>{deliverable}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>

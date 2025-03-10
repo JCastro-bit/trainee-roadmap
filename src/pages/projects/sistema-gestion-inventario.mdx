@@ -1,0 +1,161 @@
+---
+title: 'Sistema de Gestión de Inventario'
+description: 'Aplicación completa para gestionar productos, categorías y movimientos de inventario'
+phase: 1
+period: 'Meses 1-3'
+level: 'Básico-Intermedio'
+technologies: ['Spring Boot', 'MySQL', 'Angular', 'JPA/Hibernate', 'RESTful API']
+coverImage: 'https://images.unsplash.com/photo-1737684462532-a51b88670a76'
+layout: '../../layouts/ProjectLayout.astro'
+---
+
+import ProjectDetails from '../../components/ProjectDetails.astro';
+
+# Sistema de Gestión de Inventario
+
+## Resumen del Proyecto
+
+Este proyecto integra los conocimientos adquiridos durante la primera fase del plan de desarrollo full stack, 
+combinando Spring Boot como backend, MySQL como base de datos y Angular para el frontend. La aplicación permite 
+gestionar productos, categorías, proveedores y movimientos de inventario con un sistema CRUD completo.
+
+## Objetivos de Aprendizaje
+
+- Implementar un backend completo con Spring Boot
+- Diseñar y desarrollar un modelo de datos relacional en MySQL
+- Crear una interfaz de usuario con componentes reutilizables en Angular
+- Integrar los sistemas mediante APIs RESTful
+- Aplicar validaciones y manejo de errores
+
+<ProjectDetails
+  title="Sistema de Gestión de Inventario"
+  phase={1}
+  description="Aplicación completa para gestionar productos, categorías y movimientos de inventario con un sistema CRUD completo."
+  functionalities={[
+    {
+      title: "Gestión de Productos",
+      features: [
+        "Registro, edición y eliminación de productos",
+        "Clasificación por categorías y proveedores",
+        "Asignación de códigos de barras y SKUs",
+        "Gestión de imágenes de productos"
+      ]
+    },
+    {
+      title: "Control de Inventario",
+      features: [
+        "Registro de entradas y salidas",
+        "Historial de movimientos con trazabilidad",
+        "Alertas de stock mínimo",
+        "Informes de rotación de inventario"
+      ]
+    },
+    {
+      title: "Catálogo y Búsqueda",
+      features: [
+        "Filtrado multicriteria",
+        "Búsqueda por texto",
+        "Vista en tabla y tarjetas",
+        "Exportación de datos a Excel/CSV"
+      ]
+    }
+  ]}
+  architecture={[
+    {
+      title: "Backend (Spring Boot)",
+      features: [
+        "Controllers REST",
+        "Servicios de negocio",
+        "Repositorios JPA",
+        "Validaciones",
+        "Manejo de excepciones"
+      ]
+    },
+    {
+      title: "Base de Datos (MySQL)",
+      features: [
+        "Tablas normalizadas",
+        "Relaciones y constraints",
+        "Índices optimizados",
+        "Procedimientos almacenados",
+        "Transacciones"
+      ]
+    },
+    {
+      title: "Frontend (Angular)",
+      features: [
+        "Componentes modulares",
+        "Servicios para API",
+        "Formularios reactivos",
+        "Interceptores HTTP",
+        "Lazy loading"
+      ]
+    }
+  ]}
+  challenges={[
+    "Optimización de consultas SQL para grandes volúmenes de datos y reportes complejos",
+    "Manejo de transacciones para garantizar la integridad en operaciones con múltiples tablas",
+    "Diseño de componentes Angular reutilizables en diferentes secciones",
+    "Implementación de validaciones de formularios con dependencias condicionales",
+    "Protección contra vulnerabilidades comunes como inyección SQL, XSS y CSRF"
+  ]}
+  screenshots={[
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Dashboard Principal"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Gestión de Productos"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Registro de Movimientos"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Reportes"
+    }
+  ]}
+  knowledge={[
+    {
+      area: "Java y Spring Boot",
+      skills: [
+        "Desarrollo de APIs RESTful con Spring MVC",
+        "Mapeo objeto-relacional con JPA/Hibernate",
+        "Inyección de dependencias",
+        "Manejo de excepciones globales"
+      ]
+    },
+    {
+      area: "MySQL",
+      skills: [
+        "Diseño de esquemas relacionales",
+        "Constraints e índices",
+        "Joins complejos y subconsultas",
+        "Procedimientos almacenados básicos"
+      ]
+    },
+    {
+      area: "Angular",
+      skills: [
+        "Componentes y servicios",
+        "Observable y RxJS",
+        "Pipes personalizados para formateo de datos",
+        "Directivas estructurales"
+      ]
+    }
+  ]}
+  nextSteps={[
+    "Expansión a microservicios en la Fase 2, separando funcionalidades en servicios independientes",
+    "Implementación de seguridad avanzada en la Fase 3, con OAuth 2.0 y JWT",
+    "Optimización de rendimiento en la Fase 4, con técnicas de caching y escalabilidad"
+  ]}
+  deliverables={[
+    "Código fuente completo (repositorio Git)",
+    "Documentación técnica (Swagger para API)",
+    "Script de base de datos con datos iniciales",
+    "Manual de usuario",
+    "Guía de instalación y despliegue"
+  ]}
+/>

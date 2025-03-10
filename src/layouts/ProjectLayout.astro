@@ -1,0 +1,105 @@
+---
+// src/layouts/ProjectLayout.astro
+import MainLayout from './MainLayout.astro';
+import { getImage } from 'astro:assets';
+
+export interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+    phase: number;
+    period: string;
+    technologies: string[];
+    coverImage?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+
+// Función para obtener el color según la fase
+const getPhaseColor = (phase: number) => {
+  const colors = {
+    1: "#3182CE", // azul
+    2: "#38A169", // verde
+    3: "#805AD5", // púrpura
+    4: "#DD6B20", // naranja
+  };
+  return colors[phase] || "#3182CE";
+};
+
+const phaseColor = getPhaseColor(frontmatter.phase);
+---
+
+<MainLayout title={frontmatter.title} description={frontmatter.description}>
+  <div class="max-w-4xl mx-auto">
+    <!-- Cabecera del proyecto -->
+    <div class="mb-8 rounded-xl overflow-hidden shadow-lg">
+      <div class="h-48 bg-gradient-to-r from-gray-700 to-gray-900 relative">
+        {frontmatter.coverImage && (
+          <img 
+            src={frontmatter.coverImage} 
+            alt={frontmatter.title}
+            class="w-full h-full object-cover opacity-50"
+          />
+        )}
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="text-center px-6">
+            <div 
+              class="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2" 
+              style={`background-color: ${phaseColor}20; color: ${phaseColor};`}
+            >
+              Fase {frontmatter.phase} • {frontmatter.period}
+            </div>
+            <h1 class="text-3xl font-bold text-white mb-2">{frontmatter.title}</h1>
+            <p class="text-gray-200 max-w-xl">{frontmatter.description}</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Tecnologías -->
+      <div class="bg-white p-6">
+        <h2 class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">Tecnologías</h2>
+        <div class="flex flex-wrap gap-2">
+          {frontmatter.technologies.map((tech) => (
+            <span 
+              class="px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contenido del proyecto -->
+    <div class="bg-white rounded-xl shadow p-6 prose prose-lg max-w-none">
+      <slot />
+    </div>
+    
+    <!-- Navegación entre proyectos -->
+    <div class="mt-8 flex justify-between">
+      <a 
+        href="/projects" 
+        class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
+        </svg>
+        Todos los proyectos
+      </a>
+      
+      {frontmatter.phase < 4 && (
+        <a 
+          href={`/projects/fase-${frontmatter.phase + 1}`} 
+          class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white"
+          style={`background-color: ${getPhaseColor(frontmatter.phase + 1)};`}
+        >
+          Siguiente fase
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      )}
+    </div>
+  </div>
+</MainLayout>

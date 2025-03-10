@@ -1,0 +1,187 @@
+---
+title: 'Sistema de Gestión de Tickets Seguro'
+description: 'Plataforma empresarial para gestión de incidencias, soporte y seguimiento con seguridad avanzada'
+phase: 3
+period: 'Meses 7-9'
+level: 'Intermedio-Avanzado'
+technologies: ['Spring Cloud', 'OAuth2/JWT', 'MySQL', 'Rancher', 'CI/CD']
+coverImage: 'https://images.unsplash.com/photo-1739056352870-17df21abfab8'
+layout: '../../layouts/ProjectLayout.astro'
+---
+
+import ProjectDetails from '../../components/ProjectDetails.astro';
+
+# Sistema de Gestión de Tickets Seguro
+
+## Resumen del Proyecto
+
+Este proyecto implementa una plataforma empresarial completa para la gestión de tickets de soporte e incidencias con alto nivel de seguridad. La aplicación se desarrolla con arquitectura de microservicios usando Spring Cloud, autenticación centralizada con OAuth2/JWT, y se despliega en contenedores orquestados con Rancher sobre RedHat Linux mediante pipelines automatizados de CI/CD.
+
+## Objetivos de Aprendizaje
+
+- Implementar arquitecturas avanzadas de microservicios con Spring Cloud
+- Aplicar estándares de seguridad empresarial (OAuth2, JWT, RBAC)
+- Configurar orquestación de contenedores con Rancher
+- Desarrollar pipelines de CI/CD completos con Jenkins
+- Implementar protecciones contra vulnerabilidades comunes (OWASP Top 10)
+
+<ProjectDetails
+  title="Sistema de Gestión de Tickets Seguro"
+  phase={3}
+  description="Plataforma empresarial para gestión de incidencias y soporte con arquitectura de microservicios, alta seguridad y despliegue automatizado."
+  functionalities={[
+    {
+      title: "Gestión de Tickets",
+      features: [
+        "Creación y seguimiento de tickets multicanal",
+        "Categorización y priorización automática",
+        "Sistema de escalado y asignación inteligente",
+        "Notificaciones en tiempo real"
+      ]
+    },
+    {
+      title: "Portal de Agentes",
+      features: [
+        "Dashboard personalizado por rol",
+        "Vista unificada de tickets asignados",
+        "Herramientas de colaboración entre agentes",
+        "Gestión de SLAs y tiempos de respuesta"
+      ]
+    },
+    {
+      title: "Análisis y Reportes",
+      features: [
+        "Métricas de tiempo de resolución",
+        "Tendencias de incidencias por categoría",
+        "Rendimiento de agentes y equipos",
+        "Reportes personalizables exportables"
+      ]
+    },
+    {
+      title: "Administración y Seguridad",
+      features: [
+        "Gestión granular de roles y permisos",
+        "Auditoría completa de actividades",
+        "Configuración de reglas de negocio",
+        "Políticas de retención y GDPR"
+      ]
+    }
+  ]}
+  architecture={[
+    {
+      title: "Microservicios Spring Cloud",
+      features: [
+        "API Gateway con Spring Cloud Gateway",
+        "Discovery Service con Eureka",
+        "Config Server centralizado",
+        "Circuit Breaker con Resilience4j"
+      ]
+    },
+    {
+      title: "Seguridad",
+      features: [
+        "Servidor OAuth2/OIDC",
+        "JWT para autenticación entre servicios",
+        "Control de acceso basado en roles (RBAC)",
+        "Almacenamiento seguro de credenciales"
+      ]
+    },
+    {
+      title: "Base de Datos",
+      features: [
+        "MySQL con esquema de particiones",
+        "Modelo de datos normalizado",
+        "Índices optimizados",
+        "Procedimientos almacenados"
+      ]
+    },
+    {
+      title: "Contenedores y DevOps",
+      features: [
+        "Servicios dockerizados",
+        "Orquestación con Rancher",
+        "Pipeline CI/CD con Jenkins",
+        "Infraestructura como código"
+      ]
+    }
+  ]}
+  challenges={[
+    "Diseño de una arquitectura de microservicios escalable y resiliente",
+    "Implementación de seguridad transversal en todos los componentes",
+    "Configuración de comunicación segura entre microservicios",
+    "Gestión de identidades y permisos con OAuth2 y JWT",
+    "Orquestación de contenedores con alta disponibilidad",
+    "Automatización completa del proceso de integración y despliegue",
+    "Implementación de auditoría y trazabilidad de todas las operaciones"
+  ]}
+  screenshots={[
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Dashboard Principal"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Gestión de Tickets"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Panel de Administración"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Reportes y Análisis"
+    }
+  ]}
+  knowledge={[
+    {
+      area: "Java Enterprise y Spring Cloud",
+      skills: [
+        "Arquitectura de microservicios con Spring Cloud",
+        "Patrones de comunicación entre servicios",
+        "Gestión de configuración centralizada",
+        "Implementación de Circuit Breaker, Retry y Fallback"
+      ]
+    },
+    {
+      area: "Seguridad Empresarial",
+      skills: [
+        "Implementación de OAuth2/OpenID Connect",
+        "Generación y validación de tokens JWT",
+        "Control de acceso basado en roles (RBAC)",
+        "Protección contra vulnerabilidades OWASP Top 10"
+      ]
+    },
+    {
+      area: "Contenedores y Orquestación",
+      skills: [
+        "Gestión avanzada de contenedores Docker",
+        "Orquestación con Rancher",
+        "Configuración de entornos en RedHat Linux",
+        "Gestión de secretos y configuraciones"
+      ]
+    },
+    {
+      area: "DevOps y CI/CD",
+      skills: [
+        "Configuración de pipelines en Jenkins",
+        "Automatización de pruebas (unitarias, integración, seguridad)",
+        "Gestión de versiones y despliegue continuo",
+        "Monitorización y gestión de logs"
+      ]
+    }
+  ]}
+  nextSteps={[
+    "Implementación de arquitectura de microservicios avanzada con DDD en la Fase 4",
+    "Optimización de rendimiento con técnicas de caching distribuido",
+    "Integración con sistemas de monitorización y alertas empresariales",
+    "Implementación de análisis predictivo para la resolución de incidencias"
+  ]}
+  deliverables={[
+    "Manual de arquitectura con diagramas de componentes y secuencia",
+    "Código documentado con JavaDoc y comentarios descriptivos",
+    "Plan de securización con análisis de amenazas y mitigaciones",
+    "Documentación de API con OpenAPI/Swagger",
+    "Scripts de infraestructura como código (Docker, Kubernetes)",
+    "Manual de despliegue y operaciones"
+  ]}
+/>

@@ -1,0 +1,188 @@
+---
+title: 'Plataforma Empresarial Integrada'
+description: 'Sistema empresarial completo para gestión de recursos y procesos de negocio con arquitectura avanzada'
+phase: 4
+period: 'Meses 10-12'
+level: 'Avanzado'
+technologies: ['Clean Architecture', 'Microservicios', 'Docker', 'Rancher', 'Redis', 'ELK Stack']
+coverImage: 'https://images.unsplash.com/photo-1740568439301-1c1736a8ec69'
+layout: '../../layouts/ProjectLayout.astro'
+---
+
+import ProjectDetails from '../../components/ProjectDetails.astro';
+
+# Plataforma Empresarial Integrada
+
+## Resumen del Proyecto
+
+Este proyecto implementa una plataforma empresarial completa que integra todas las tecnologías y conceptos aprendidos durante el plan de desarrollo. El sistema utiliza Clean Architecture y Domain-Driven Design para estructurar microservicios especializados desplegados en contenedores con orquestación avanzada, alta disponibilidad y rendimiento optimizado mediante técnicas de caching y monitoreo.
+
+## Objetivos de Aprendizaje
+
+- Aplicar principios de Clean Architecture y Domain-Driven Design en sistemas empresariales
+- Implementar optimizaciones de rendimiento con caching distribuido y consultas eficientes
+- Configurar orquestación avanzada de contenedores con estrategias de escalabilidad
+- Implementar monitoreo integral con ELK Stack para análisis de rendimiento
+- Diseñar sistemas con alta disponibilidad y recuperación ante fallos
+
+<ProjectDetails
+  title="Plataforma Empresarial Integrada"
+  phase={4}
+  description="Sistema empresarial completo que integra arquitectura avanzada, microservicios optimizados, alta disponibilidad y monitoreo integral."
+  functionalities={[
+    {
+      title: "Gestión de Recursos",
+      features: [
+        "Inventario y activos empresariales",
+        "Recursos humanos y gestión de talento",
+        "Seguimiento financiero y presupuestario",
+        "Optimización y planificación de recursos"
+      ]
+    },
+    {
+      title: "Procesos de Negocio",
+      features: [
+        "Flujos de trabajo configurables",
+        "Automatización de procesos",
+        "Notificaciones y alertas",
+        "Reglas de negocio personalizables"
+      ]
+    },
+    {
+      title: "Inteligencia Empresarial",
+      features: [
+        "Dashboards interactivos en tiempo real",
+        "Reportes personalizados y exportables",
+        "Análisis de tendencias y predicciones",
+        "KPIs y métricas de rendimiento"
+      ]
+    },
+    {
+      title: "Portal Administrativo",
+      features: [
+        "Gestión centralizada de usuarios y permisos",
+        "Configuración de parámetros del sistema",
+        "Monitoreo de salud y rendimiento",
+        "Auditoría y trazabilidad completa"
+      ]
+    }
+  ]}
+  architecture={[
+    {
+      title: "Clean Architecture",
+      features: [
+        "Separación en capas (Entities, Use Cases, Adapters, Infrastructure)",
+        "Inversión de dependencias",
+        "Modelos de dominio ricos",
+        "Tests automatizados por capas"
+      ]
+    },
+    {
+      title: "Microservicios",
+      features: [
+        "Bounded Contexts según DDD",
+        "Gateway API con balanceo de carga",
+        "Comunicación asíncrona con mensajería",
+        "Bases de datos por servicio"
+      ]
+    },
+    {
+      title: "Optimización",
+      features: [
+        "Caching distribuido con Redis",
+        "Consultas MySQL optimizadas",
+        "Replicación y sharding",
+        "Compresión y minificación"
+      ]
+    },
+    {
+      title: "Containerización",
+      features: [
+        "Orquestación con Rancher",
+        "Autoescalado horizontal",
+        "Health checks y auto-healing",
+        "Rolling updates sin downtime"
+      ]
+    }
+  ]}
+  challenges={[
+    "Diseño de arquitectura hexagonal manteniendo la flexibilidad y testabilidad",
+    "Implementación de Domain-Driven Design con bounded contexts bien definidos",
+    "Configuración de alta disponibilidad con zero downtime deployment",
+    "Optimización de rendimiento para grandes volúmenes de datos",
+    "Integración entre microservicios Java y .NET manteniendo la consistencia",
+    "Implementación de monitoreo completo con alertas predictivas",
+    "Estrategias de recuperación ante desastres con mínima pérdida de datos"
+  ]}
+  screenshots={[
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Dashboard Empresarial"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Gestión de Recursos"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Configuración de Procesos"
+    },
+    {
+      src: "/api/placeholder/400/250",
+      alt: "Monitoreo ELK"
+    }
+  ]}
+  knowledge={[
+    {
+      area: "Arquitectura Empresarial",
+      skills: [
+        "Clean Architecture y principios SOLID",
+        "Domain-Driven Design y modelado estratégico",
+        "Bounded Contexts y Context Mapping",
+        "Event Sourcing y CQRS básico"
+      ]
+    },
+    {
+      area: "Contenedores Avanzados",
+      skills: [
+        "Orquestación multi-cluster con Rancher",
+        "Gestión de secretos y configuraciones",
+        "Estrategias de despliegue avanzadas",
+        "Networking y almacenamiento persistente"
+      ]
+    },
+    {
+      area: "Optimización y Rendimiento",
+      skills: [
+        "Caching distribuido con Redis",
+        "Optimización avanzada de consultas MySQL",
+        "Sharding y replicación de datos",
+        "Técnicas de perfilado y análisis de rendimiento"
+      ]
+    },
+    {
+      area: "Monitoreo y Observabilidad",
+      skills: [
+        "Configuración de ELK Stack completo",
+        "Dashboards de monitoreo con Kibana",
+        "Alertas basadas en umbrales y patrones",
+        "Distributed tracing para microservicios"
+      ]
+    }
+  ]}
+  nextSteps={[
+    "Implementación de sistemas de machine learning para predicción y optimización",
+    "Arquitectura serverless para componentes específicos de la plataforma",
+    "Integración con servicios de nube para elasticidad y escalado global",
+    "Implementación de GraphQL para APIs flexibles y eficientes"
+  ]}
+  deliverables={[
+    "Sistema funcional desplegado en entorno cloud",
+    "Documentación completa de arquitectura y diseño",
+    "Manual de operaciones y procedimientos DevOps",
+    "Métricas de rendimiento y plan de escalabilidad",
+    "Documentación de API para integración externa",
+    "Estrategias de recuperación ante desastres",
+    "Manuales de usuario para diferentes roles"
+  ]}
+/>
