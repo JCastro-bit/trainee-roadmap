@@ -1,0 +1,14 @@
+---
+// src/pages/learning-path.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import LearningPathEmpresarial from '../components/learning-path-empresa';
+---
+
+<MainLayout 
+  title="Plan de Desarrollo Full Stack Empresarial" 
+  description="Plan de desarrollo profesional enfocado en tecnologías empresariales"
+>
+  <section class="bg-white rounded-lg shadow-md p-6">
+    <LearningPathEmpresarial client:load />
+  </section>
+</MainLayout>
